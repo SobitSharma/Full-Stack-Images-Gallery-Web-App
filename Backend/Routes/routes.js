@@ -1,5 +1,5 @@
-import { Router } from "express"
-import { Login, deleteUserImage, getAllUserImages, getUserImages, registerUser, uploadImage, verifyJWT } from "../SourceFiles/Controllers.js"
+import { Router, response } from "express"
+import { Login, deleteUserImage, getAllUserImages, getUserImages, mainFile, registerUser, uploadImage, verifyJWT } from "../SourceFiles/Controllers.js"
 import { upload } from "../Middlewares/multer.middleware.js"
 
 const router = new Router()

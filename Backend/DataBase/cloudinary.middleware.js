@@ -1,6 +1,5 @@
 import cloudinary from 'cloudinary';
 
-
 function cloud_Configuration(){
     cloudinary.config({ 
         cloud_name: process.env.Cloudname, 
@@ -8,7 +7,7 @@ function cloud_Configuration(){
         api_secret: process.env.Cloudsecret
     });
 }
-
+                                   
 const cloudupload = async(path)=> {
     try {
         const uploadresult = await cloudinary.uploader.upload(path)
