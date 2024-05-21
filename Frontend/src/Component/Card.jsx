@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useUserContext } from "../Context/UserContext";
 
 export default function Card({ url, imagename, keyvalue }) {
-  const {getData} = useUserContext()
+  const {getData, updateloginstatus} = useUserContext()
     function HandleDelete(){
       const url = 'http://localhost:8000/gallery/v1/deleteimage'
       fetch(url, {
@@ -22,8 +21,9 @@ export default function Card({ url, imagename, keyvalue }) {
           getData()
           alert(message)
         }
-        else{
-          alert('SomeThing Unexpected Happened')
+        else if(code ==='402' || code === '40'){
+          updateloginstatus(false)
+          alert('Your Session has Expired')
         }
       })
     }

@@ -8,6 +8,7 @@ function App(){
   const [userlogin, setUserLogin] = useState(false)
   const [userUploads, setuseruploads] = useState([])
   const [AllData, setAllData] = useState([])
+  
   const updateUploads = (id) => {
     if(userUploads){
       setuseruploads((previousearry)=> previousearry.filter((singleval)=> singleval.publicid !== id))
